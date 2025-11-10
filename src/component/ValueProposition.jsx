@@ -59,7 +59,7 @@ const ValueProposition = () => {
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Empower your business with scalable, data-driven strategies that deliver measurable impact — fast.
+          Empower your business with scalable, data-driven strategies that deliver measurable impact — faster.
         </p>
 
         {/* 🧩 Value Cards */}
