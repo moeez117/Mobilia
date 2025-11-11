@@ -1,6 +1,7 @@
 // src/components/AboutHero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import "./AboutHero.css"; // Make sure to import CSS for the shine animation
 
 export default function AboutHero() {
   return (
@@ -34,7 +35,7 @@ export default function AboutHero() {
           </div>
         </motion.div>
 
-        {/* --- Right Image with Accent Layers --- */}
+        {/* --- Right Image with Shine Effect --- */}
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -44,13 +45,18 @@ export default function AboutHero() {
           {/* Background accent layer */}
           <div className="absolute top-12 -left-10 w-80 h-80 bg-[#00bfa6] rounded-2xl rotate-6 opacity-90 hidden lg:block blur-sm shadow-lg" />
 
-          {/* Foreground image */}
-          <div className="relative z-10 rounded-2xl mx-4 overflow-hidden w-80 h-80 lg:w-96 lg:h-96 shadow-2xl border border-[#00bfa620]">
+          {/* Foreground image with shine */}
+          <div className="relative z-10 rounded-2xl mx-4 overflow-hidden w-80 h-80 lg:w-96 lg:h-96 shadow-2xl border border-[#00bfa620] group">
             <img
               src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80&w=800"
               alt="Mobilia cost optimization"
-              className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500 ease-out"
+              className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-500 ease-out"
             />
+
+            {/* Shine overlay */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+              <div className="absolute top-0 -left-64 w-64 h-full bg-white opacity-20 rotate-45 transform translate-x-0 group-hover:animate-shine"></div>
+            </div>
           </div>
 
           {/* Subtle glow effect */}
